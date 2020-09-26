@@ -61,6 +61,7 @@ class DraggableDiceWidgetState extends State<DraggableDiceWidget> {
       ),
       onDragCompleted: () {},
       onDragEnd: (drag) {
+        shuffleEnd();
         setState(() {
           top = top + drag.offset.dy < 0 ? 0 : top + drag.offset.dy;
           left = left + drag.offset.dx < 0 ? 0 : left + drag.offset.dx;
