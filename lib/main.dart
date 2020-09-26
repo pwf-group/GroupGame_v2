@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screen/home_screen.dart';
 import 'screen/bottle_spinner_screen.dart';
+import 'screen/dice_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: <String, WidgetBuilder> {
         '/bottle_spinner': (BuildContext context) => BottleSpinnerScreen(),
-        // '/dice': (BuildContext context) => MyHomePage(title: 'aa'),
+        '/dice': (BuildContext context) => DiceScreen(),
         // '/buzzer': (BuildContext context) => MyHomePage(title: 'aa'),
         // '/wheel_fortune': (BuildContext context) => MyHomePage(title: 'aa'),
         // '/pirate_knife': (BuildContext context) => MyHomePage(title: 'aa'),

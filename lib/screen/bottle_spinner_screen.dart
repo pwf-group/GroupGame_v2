@@ -7,10 +7,10 @@ class BottleSpinnerScreen extends StatefulWidget {
   BottleSpinnerScreen({Key key}) : super(key: key);
 
   @override
-  _BottleSpinnerScreenState createState() => _BottleSpinnerScreenState();
+  BottleSpinnerScreenState createState() => BottleSpinnerScreenState();
 }
 
-class _BottleSpinnerScreenState extends State<BottleSpinnerScreen>
+class BottleSpinnerScreenState extends State<BottleSpinnerScreen>
     with TickerProviderStateMixin {
   bool _isSpinning = true;
   AnimationController _controller;
@@ -61,7 +61,7 @@ class _BottleSpinnerScreenState extends State<BottleSpinnerScreen>
     }
 
     double duration = max(details.primaryVelocity.abs(), 2500);
-    double rotation = details.primaryVelocity.abs() / 100;
+    double rotation = details.primaryVelocity.abs() / 100 + Random.secure().nextDouble();
 
     if (rotation == 0) return;
 
@@ -90,13 +90,11 @@ class _BottleSpinnerScreenState extends State<BottleSpinnerScreen>
                 turns: _animation != null
                     ? _animation
                     : Tween(begin: 0.0, end: 0.0).animate(_controller),
-                child: SizedBox(
+                child: Lottie.asset(
+                  'assets/beer-bottle.json',
                   height: minSize,
                   width: minSize,
-                  child: Lottie.asset(
-                    'assets/beer-bottle.json',
-                    repeat: false,
-                  ),
+                  repeat: false,
                 ),
               ),
             ),

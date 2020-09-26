@@ -5,10 +5,10 @@ class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, '/bottle_spinner');
                   },
                 ),
-                // alignedGameButton('Dice', () => { print('dice') }),
+                alignedGameButton(
+                  name: 'Dice',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/dice');
+                  },
+                ),
                 // alignedGameButton('Buzzer', () => {}),
                 // alignedGameButton('Wheel Of Fortune', () => {}),
                 // alignedGameButton('Pirate Knife', () => {}),
