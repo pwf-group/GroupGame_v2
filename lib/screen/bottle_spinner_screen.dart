@@ -85,6 +85,7 @@ class BottleSpinnerScreenState extends State<BottleSpinnerScreen>
         onVerticalDragEnd: _spin,
         child: Stack(
           children: [
+            Container(color: Colors.green),
             Center(
               child: RotationTransition(
                 turns: _animation != null
