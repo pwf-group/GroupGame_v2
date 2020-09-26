@@ -5,11 +5,11 @@ class DiceScreen extends StatefulWidget {
   DiceScreen({Key key}) : super(key: key);
 
   @override
-  _DiceScreenState createState() => _DiceScreenState();
+  DiceScreenState createState() => DiceScreenState();
 }
 
 
-class _DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
+class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
   int _diceCount = 0;
   final _dices = <Widget>[];
   final _dicesKey = <GlobalKey<DraggableDiceWidgetState>>[];

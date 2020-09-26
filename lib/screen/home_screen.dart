@@ -46,7 +46,12 @@ class HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, '/dice');
                   },
                 ),
-                // alignedGameButton('Buzzer', () => {}),
+                alignedGameButton(
+                  name: 'Buzzer',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/buzzer');
+                  },
+                ),
                 // alignedGameButton('Wheel Of Fortune', () => {}),
                 // alignedGameButton('Pirate Knife', () => {}),
               ],
