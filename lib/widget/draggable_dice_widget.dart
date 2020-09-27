@@ -34,7 +34,7 @@ class DraggableDiceWidgetState extends State<DraggableDiceWidget> {
   }
 
   void shuffleEnd() {
-    setState(() { face = Random.secure().nextInt(5) + 1; });
+    setState(() { face = Random.secure().nextInt(6) + 1; });
   }
 
   @override
