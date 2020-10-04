@@ -107,7 +107,7 @@ class BottleSpinnerScreenState extends State<BottleSpinnerScreen>
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purple,
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
           Navigator.pop(context);
         },

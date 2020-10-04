@@ -49,7 +49,7 @@ class RouletteEditWidget extends StatelessWidget {
               "Save",
               style: TextStyle(color: Colors.white),
             ),
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).primaryColor,
           )
         ],
       ),

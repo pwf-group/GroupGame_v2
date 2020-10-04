@@ -83,7 +83,7 @@ class BuzzerScreenState extends State<BuzzerScreen>
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purple,
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
           Navigator.pop(context);
         },
@@ -95,35 +95,37 @@ class BuzzerScreenState extends State<BuzzerScreen>
   List<Widget> _buildDiceSelector() {
     return [
       Ink(
-        decoration: const ShapeDecoration(
-          color: Colors.purple,
+        decoration: ShapeDecoration(
+          color: Theme.of(context).primaryColor,
           shape: CircleBorder(),
         ),
         child: IconButton(
           icon: Icon(Icons.arrow_left),
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           onPressed: _removeBuzzer,
         ),
       ),
       SizedBox(width: 20),
       RaisedButton(
+        color: Theme.of(context).primaryColor,
         onPressed: _resetGame,
-        child: const Text(
+        child: Text(
           'Reset',
           style: TextStyle(
             fontSize: 20,
+            color: Theme.of(context).cardColor,
           ),
         ),
       ),
       SizedBox(width: 20),
       Ink(
-        decoration: const ShapeDecoration(
-          color: Colors.purple,
+        decoration: ShapeDecoration(
+          color: Theme.of(context).primaryColor,
           shape: CircleBorder(),
         ),
         child: IconButton(
           icon: Icon(Icons.arrow_right),
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           onPressed: _addBuzzer,
         ),
       ),

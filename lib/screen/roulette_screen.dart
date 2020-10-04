@@ -131,7 +131,7 @@ class RouletteScreenState extends State<RouletteScreen>
             onVerticalDragEnd: _spin,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 35.0),
+            padding: EdgeInsets.only(top: 40.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _buildSelector(),

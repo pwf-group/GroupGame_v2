@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         primarySwatch: Colors.purple,
+        primaryColor: Colors.purpleAccent,
         brightness: Brightness.dark,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'NoContinue',

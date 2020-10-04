@@ -68,7 +68,7 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 35.0),
+            padding: EdgeInsets.only(top: 40.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _buildDiceSelector(),
@@ -82,7 +82,7 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purple,
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
           Navigator.pop(context);
         },
@@ -94,13 +94,13 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
   List<Widget> _buildDiceSelector() {
     return [
       Ink(
-        decoration: const ShapeDecoration(
-          color: Colors.purple,
+        decoration: ShapeDecoration(
+          color: Theme.of(context).primaryColor,
           shape: CircleBorder(),
         ),
         child: IconButton(
           icon: Icon(Icons.arrow_left),
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           onPressed: _removeDice,
         ),
       ),
@@ -110,18 +110,18 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 50,
-          color: Colors.purple,
+          color: Theme.of(context).primaryColor,
         ),
       ),
       SizedBox(width: 20),
       Ink(
-        decoration: const ShapeDecoration(
-          color: Colors.purple,
+        decoration: ShapeDecoration(
+          color: Theme.of(context).primaryColor,
           shape: CircleBorder(),
         ),
         child: IconButton(
           icon: Icon(Icons.arrow_right),
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           onPressed: _addDice,
         ),
       ),
