@@ -3,6 +3,7 @@ import 'screen/home_screen.dart';
 import 'screen/bottle_spinner_screen.dart';
 import 'screen/dice_screen.dart';
 import 'screen/buzzer_screen.dart';
+import 'screen/roulette_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         '/bottle_spinner': (BuildContext context) => BottleSpinnerScreen(),
         '/dice': (BuildContext context) => DiceScreen(),
         '/buzzer': (BuildContext context) => BuzzerScreen(),
-        // '/wheel_fortune': (BuildContext context) => MyHomePage(title: 'aa'),
+        '/roulette': (BuildContext context) => RouletteScreen(),
         // '/pirate_knife': (BuildContext context) => MyHomePage(title: 'aa'),
       },
     );

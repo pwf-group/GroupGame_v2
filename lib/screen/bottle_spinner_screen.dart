@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'dart:math';
 import 'dart:developer' as developer;
+import '../utils.dart';
 
 class BottleSpinnerScreen extends StatefulWidget {
   BottleSpinnerScreen({Key key}) : super(key: key);
@@ -48,12 +49,6 @@ class BottleSpinnerScreenState extends State<BottleSpinnerScreen>
     super.dispose();
   }
 
-  double _getMinSize(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    return min(width, height);
-  }
-
   void _spin(DragEndDetails details) {
     if (_isSpinning == true) {
       developer.log('bottle is not ready!', name: 'bottle_spinner.spin');
@@ -79,7 +74,7 @@ class BottleSpinnerScreenState extends State<BottleSpinnerScreen>
 
   @override
   Widget build(BuildContext context) {
-    double minSize = _getMinSize(context);
+    double minSize = minScreenSize(context);
     return Scaffold(
       body: GestureDetector(
         onVerticalDragEnd: _spin,

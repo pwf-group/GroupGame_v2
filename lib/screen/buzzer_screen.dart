@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widget/draggable_buzzer_widget.dart';
+import '../utils.dart';
 
 class BuzzerScreen extends StatefulWidget {
   BuzzerScreen({Key key}) : super(key: key);
@@ -12,18 +13,6 @@ class BuzzerScreenState extends State<BuzzerScreen>
     with TickerProviderStateMixin {
   final _buzzers = <Widget>[];
   final _buzzSeq = <Color>[];
-  final List<Color> _colors = [
-    Colors.purple,
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.amber,
-    Colors.orange[900],
-    Colors.lime[800],
-    Colors.teal,
-    Colors.indigo,
-    Colors.grey[800],
-  ];
 
   @override
   void initState() {
@@ -42,7 +31,7 @@ class BuzzerScreenState extends State<BuzzerScreen>
       if (_buzzers.length < 9) {
         _buzzers.add(DraggableBuzzerWidget(
           parentAction: buzz,
-          color: _colors[_buzzers.length],
+          color: MyColor.colors[_buzzers.length],
         ));
       }
     });
@@ -84,7 +73,7 @@ class BuzzerScreenState extends State<BuzzerScreen>
             )).toList(),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 25.0),
+            padding: EdgeInsets.only(top: 35.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _buildDiceSelector(),

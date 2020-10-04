@@ -68,7 +68,7 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 25.0),
+            padding: EdgeInsets.only(top: 35.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _buildDiceSelector(),
