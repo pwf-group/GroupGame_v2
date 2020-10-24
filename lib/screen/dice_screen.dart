@@ -67,13 +67,6 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
     return Scaffold(
       body: Stack(
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 40.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: _buildDiceSelector(),
-            ),
-          ),
           GestureDetector(
             onLongPress: _shuffleAllStart,
             onLongPressUp: _shuffleAllEnd,
@@ -81,12 +74,14 @@ class DiceScreenState extends State<DiceScreen> with TickerProviderStateMixin {
           ..._dices,
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).primaryColor,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.arrow_back),
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: _buildDiceSelector(),
+          ),
+        ),
       ),
     );
   }

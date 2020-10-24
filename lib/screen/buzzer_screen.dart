@@ -72,27 +72,22 @@ class BuzzerScreenState extends State<BuzzerScreen>
               ),
             )).toList(),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 35.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: _buildDiceSelector(),
-            ),
-          ),
           ..._buzzers,
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).primaryColor,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: const Icon(Icons.arrow_back),
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: _buildBuzzerSelector(),
+          ),
+        ),
       ),
     );
   }
 
-  List<Widget> _buildDiceSelector() {
+  List<Widget> _buildBuzzerSelector() {
     return [
       Ink(
         decoration: ShapeDecoration(

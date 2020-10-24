@@ -19,8 +19,8 @@ class DraggableDiceWidgetState extends State<DraggableDiceWidget> {
     super.initState();
 
     Future.delayed(Duration.zero, () {
-      int width = MediaQuery.of(context).size.width.toInt() - 50;
-      int height = MediaQuery.of(context).size.height.toInt() - 50;
+      int width = MediaQuery.of(context).size.width.toInt() - 180;
+      int height = MediaQuery.of(context).size.height.toInt() - 180;
 
       setState(() {
         left = Random.secure().nextInt(width).toDouble();

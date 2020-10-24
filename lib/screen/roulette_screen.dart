@@ -130,13 +130,6 @@ class RouletteScreenState extends State<RouletteScreen>
           GestureDetector(
             onVerticalDragEnd: _spin,
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 40.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: _buildSelector(),
-            ),
-          ),
           Center(
             child: RotationTransition(
               turns: _animation != null
@@ -172,12 +165,14 @@ class RouletteScreenState extends State<RouletteScreen>
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).primaryColor,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.arrow_back),
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: _buildSelector(),
+          ),
+        ),
       ),
     );
   }
@@ -197,9 +192,16 @@ class RouletteScreenState extends State<RouletteScreen>
       ),
       SizedBox(width: 20),
       RaisedButton(
-        onPressed: null, // () { _showEditDialog(_cards[0]); },
+        // onPressed: null, // () { _showEditDialog(_cards[0]); },
+        onPressed: _isSpinning
+            ? () {
+                setState(() {
+                  _isSpinning = false;
+                });
+              }
+            : null,
         child: const Text(
-          'Spin',
+          'Reset',
           style: TextStyle(
             fontSize: 20,
           ),
