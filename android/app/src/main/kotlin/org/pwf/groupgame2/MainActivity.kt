@@ -1,4 +1,4 @@
-package com.example.group_game
+package org.pwf.groupgame2
 
 import io.flutter.embedding.android.FlutterActivity
 

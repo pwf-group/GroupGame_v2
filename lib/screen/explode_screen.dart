@@ -197,6 +197,7 @@ class ExplodeScreenState extends State<ExplodeScreen>
           child: RaisedButton(
             onPressed: () {
               initBomb(_bombCount);
+              _start = false;
               Navigator.of(buildContext).pop();
             },
             child: const Text(
